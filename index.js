@@ -2,13 +2,15 @@ const express = require("express");
 const app = express();
 const { PORT } = require("./config");
 
-require("./routes/views")(app);
+//Routes
 require("./routes/api")(app);
+require("./routes/views")(app);
 
+//Server listen
 function init(){
-    console.log("Iniciando instancia de Express...");
+    console.log("Starting server...");
     app.listen(PORT, ()=>{
-        console.log("El servidor Express esta activo.");
+        console.log(`🚀 Server on port ${PORT}`);
     });
 }
 
